@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerService {
@@ -23,7 +24,7 @@ public class CustomerService {
     }
 
     @Transactional
-    public Customer findCustomerById(long id) {
+    public Optional<Customer> findCustomerById(Long id) {
         return customerRepository.findById(id);
     }
 
